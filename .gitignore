@@ -5,7 +5,8 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 .idea
-
+Plugins
+Plugins*
 # Visual Studio cache directory
 .vs/
 
