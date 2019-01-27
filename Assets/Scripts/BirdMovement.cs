@@ -10,13 +10,13 @@ public class BirdMovement : MonoBehaviour {
 
 	[Range(0,1)]
 	public float FuckedUpMeter;
-
+	
 	public float SideForces;
 	public AnimationCurve FlapForce;
 	private float _lastFlap = 0;
 
-	private float _minY = -7;
-	private float _maxY = 7;
+	private float _minY = -5.5f;
+	private float _maxY = 11;
 
 	private Quaternion _lastRotation;
 	
