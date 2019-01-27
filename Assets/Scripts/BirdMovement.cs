@@ -15,10 +15,9 @@ public class BirdMovement : MonoBehaviour {
 	public AnimationCurve FlapForce;
 	private float _lastFlap = 0;
 
-	private float _minY = 15;
-	private float _maxY = 60;
+	private float _minY = -7;
+	private float _maxY = 7;
 
-	private Vector3 localVelocity;
 	private Quaternion lastRotation;
 	
 	void Awake () {
@@ -45,16 +44,16 @@ public class BirdMovement : MonoBehaviour {
 		Flap();
 		
 		var bounds = Camera.main.NominalScreenAt(transform);
-;		if (Input.GetKey(KeyCode.A) ) {
+;		if (Input.GetKey(KeyCode.A) && transform.localPosition.x > bounds.min.x) {
 			_rigidbody.AddForce(-transform.right * SideForces);
 		}
 		
-		if (Input.GetKey(KeyCode.D) ) {
+		if (Input.GetKey(KeyCode.D) && transform.localPosition.x < bounds.max.x) {
 			_rigidbody.AddForce(transform.right * SideForces);
 		}
 		
 		transform.localPosition = transform.localPosition.ClampX(bounds.min.x, bounds.max.x);
-//		transform.localPosition = transform.localPosition.ClampY(_minY, _maxY);
+		transform.localPosition = transform.localPosition.ClampY(_minY, _maxY);
 
 	}
 
