@@ -222,9 +222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6a6df342b52d24092cf6bbb590c535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveHeight: 0.4
-  waveFrequency: 0.15
-  waveLength: 2
+  waveHeight: 0.5
+  waveFrequency: 0.5
+  waveLength: 0.75
   waveOriginPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &12834641
 MeshRenderer:
@@ -7839,6 +7839,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 742665968}
+  - component: {fileID: 742665969}
   m_Layer: 0
   m_Name: Mountains
   m_TagString: Untagged
@@ -7880,6 +7881,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &742665969
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742665967}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
 --- !u!1001 &761172794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11062,6 +11077,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6967424187748540352, guid: 127d64a4f1524e646ac49e5089beda41,
+        type: 3}
+      propertyPath: FlapForce.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967424187748540352, guid: 127d64a4f1524e646ac49e5089beda41,
+        type: 3}
+      propertyPath: SideForces
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967424187748540352, guid: 127d64a4f1524e646ac49e5089beda41,
+        type: 3}
+      propertyPath: FlapForce.m_Curve.Array.data[0].inSlope
+      value: 14.864733
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967424187748540352, guid: 127d64a4f1524e646ac49e5089beda41,
+        type: 3}
+      propertyPath: FlapForce.m_Curve.Array.data[0].outSlope
+      value: 14.864733
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967424187748540352, guid: 127d64a4f1524e646ac49e5089beda41,
+        type: 3}
+      propertyPath: FlapForce.m_Curve.Array.data[1].time
+      value: 1.0383911
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967424187748540352, guid: 127d64a4f1524e646ac49e5089beda41,
+        type: 3}
+      propertyPath: FlapForce.m_Curve.Array.data[1].value
+      value: 8.95813
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967424187748540352, guid: 127d64a4f1524e646ac49e5089beda41,
+        type: 3}
+      propertyPath: FlapForce.m_Curve.Array.data[0].time
+      value: 0.008850098
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967424187748540352, guid: 127d64a4f1524e646ac49e5089beda41,
+        type: 3}
+      propertyPath: FlapForce.m_Curve.Array.data[0].value
+      value: 2.0475159
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967424187748540352, guid: 127d64a4f1524e646ac49e5089beda41,
+        type: 3}
+      propertyPath: FlapForce.m_Curve.Array.data[0].outWeight
+      value: 0.06900323
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d64a4f1524e646ac49e5089beda41, type: 3}
 --- !u!1001 &1593646554
@@ -12421,6 +12481,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1943257902}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1951343639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6967424187880708468, guid: 127d64a4f1524e646ac49e5089beda41,
+    type: 3}
+  m_PrefabInstance: {fileID: 1560758557}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1951343641
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951343639}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2594e24f08f3ac49a01587d879c6066, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1982551776 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4792342183196866, guid: 975cff1267180ca43b65f176a31aa119,
