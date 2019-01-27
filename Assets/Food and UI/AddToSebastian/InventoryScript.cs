@@ -24,14 +24,14 @@ public class InventoryScript : MonoBehaviour {
     
     public void AddToUI(Sprite foodSprite)
     {
-        foreach (GameObject slot in iSlots)
-        {
-            if (slot.GetComponent<Image>().sprite == null)
-            {
-                slot.GetComponent<Image>().sprite = foodSprite;
-            }
+        //foreach (GameObject slot in iSlots)
+        //{
+        //if (slot.GetComponent<Image>().sprite == null)
+        //{
+        //slot.GetComponent<Image>().sprite = foodSprite;
+        //}
 
-        }
+        //}
     }
 
     public void EatFood()
