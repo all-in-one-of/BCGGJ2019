@@ -21,6 +21,7 @@ public class DamagePlayer : MonoBehaviour {
         var sebastian = other.GetComponent<BirdMovement>();
         if (sebastian != null) {
             sebastian.FuckedUpMeter += Damage;
+            SoundManager.Instance.PlayHitSound();
         }
     }
 }
