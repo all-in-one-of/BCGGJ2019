@@ -16,7 +16,7 @@ public class SoundManager : MonoBehaviour {
     
     public AudioClip Level;
 
-    public AudioSource _source;
+    private AudioSource _source;
 
     private void Awake() {
         if (Instance != null) {
