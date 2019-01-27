@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8310959899042102220}
   - component: {fileID: 5090125671331589064}
   - component: {fileID: 8696598025205707245}
+  - component: {fileID: 5027904866483423779}
   m_Layer: 0
   m_Name: greg.scott_evergreen_tree2
   m_TagString: Untagged
@@ -62,11 +63,24 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3989477181458972041}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5.5, y: 5.5, z: 5.5}
   m_Center: {x: 0, y: 7.24, z: 0}
+--- !u!114 &5027904866483423779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3989477181458972041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66de5cb4387586468c007e5b8f885ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 0.05
 --- !u!1 &4690021188899012104
 GameObject:
   m_ObjectHideFlags: 0
