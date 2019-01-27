@@ -16,7 +16,7 @@ public class HungerChicks : MonoBehaviour {
         ChickHunger = 100;
     }
 
-    void AddFood(float value) {
+    public void AddFood(float value) {
         ChickHunger += value;
         ChickHunger = Mathf.Clamp(ChickHunger, 0, 100);
     }
