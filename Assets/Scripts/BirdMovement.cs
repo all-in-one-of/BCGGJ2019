@@ -15,21 +15,19 @@ public class BirdMovement : MonoBehaviour {
 	public AnimationCurve FlapForce;
 	private float _lastFlap = 0;
 
-	private float _minY = 15;
-	private float _maxY = 60;
+	private float _minY = -7;
+	private float _maxY = 7;
 
-	private Vector3 localVelocity;
-	private Quaternion lastRotation;
+	private Quaternion _lastRotation;
 	
 	void Awake () {
 		Physics.gravity = Vector3.down * 20f;
 		_rigidbody = GetComponent<Rigidbody>();
 		_animator = GetComponent<Animator>();
-		lastRotation = transform.parent.rotation;
+		_lastRotation = transform.parent.rotation;
 	}
 	
 	void OnDrawGizmosSelected() {
-//		Camera.main.CameraGizmos(transform);
 		Gizmos.color = Color.magenta;
 		Gizmos.DrawLine(transform.position, transform.position + transform.right * 10);
 	}
@@ -38,29 +36,27 @@ public class BirdMovement : MonoBehaviour {
 	void Update () {
 		
 		Physics.gravity = Vector3.down * (20f + FuckedUpMeter * 5);
-//		
 		_rigidbody.mass = FuckedUpMeter + 0.1f;
 		_rigidbody.drag = (1 - FuckedUpMeter + 0.1f) * 5f;
-//		
 		Flap();
 		
 		var bounds = Camera.main.NominalScreenAt(transform);
-;		if (Input.GetKey(KeyCode.A) ) {
+;		if (Input.GetKey(KeyCode.A) && transform.localPosition.x > bounds.min.x) {
 			_rigidbody.AddForce(-transform.right * SideForces);
 		}
 		
-		if (Input.GetKey(KeyCode.D) ) {
+		if (Input.GetKey(KeyCode.D) && transform.localPosition.x < bounds.max.x) {
 			_rigidbody.AddForce(transform.right * SideForces);
 		}
 		
 		transform.localPosition = transform.localPosition.ClampX(bounds.min.x, bounds.max.x);
-//		transform.localPosition = transform.localPosition.ClampY(_minY, _maxY);
+		transform.localPosition = transform.localPosition.ClampY(_minY, _maxY);
 
 	}
 
 	private void FixedUpdate() {
-		_rigidbody.velocity = (transform.parent.rotation * Quaternion.Inverse(lastRotation)) * _rigidbody.velocity;
-		lastRotation = transform.parent.rotation;
+		_rigidbody.velocity = (transform.parent.rotation * Quaternion.Inverse(_lastRotation)) * _rigidbody.velocity;
+		_lastRotation = transform.parent.rotation;
 	}
 
 	private void Flap() {
