@@ -25,7 +25,8 @@ public class HungerChicks : MonoBehaviour {
     void Update() {
         ChickHunger -= 100/(4 * 60f) * Time.deltaTime;
         if (ChickHunger <= 0) {
-            //TODO GameOver
+            GameManager.Instance.GameOver();
+            this.enabled = false;
         }
     }
 }
